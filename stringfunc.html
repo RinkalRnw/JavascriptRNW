@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        str1 = "Hellol";
+        str2 = "HeLlO";
+        let i;
+        if(str1.toUpperCase() == str2.toUpperCase()){
+        //    document.write("Same"); 
+        } else {
+        //    document.write("NOt Same"); 
+        }
+let count =0;
+        function countL(str,a){
+            for(i=0;i<str.length;i++){
+                if(str.charAt(i) == a){
+                    count++;
+                }
+            }
+            return count;
+
+        }
+        
+        // document.write("String L count is "+countL(str1,'l'));
+        //Fibonacci 
+        let f=0,s=1,third;
+        for(i=1;i<=10;i++){
+            document.write(f+"<br>");
+            third = f+s;
+            f=s;
+            s=third;
+        }
+    </script>
+</body>
+</html>

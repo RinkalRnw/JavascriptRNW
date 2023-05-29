@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparision</title>
+</head>
+<body>
+    <script>
+        //Max from 4 values
+        
+        
+        // if(a>b && a>c && a>d){
+        //     document.write("a is maximum");
+        // } else if(b>c && b>d){
+        //     document.write("b is maximum");
+        // } else if(c>d){
+        //     document.write("c is maximum");
+        // } else {
+        //     document.write("d is maximum");
+        // }
+        // //Logical OR divisible by 5 or 11
+        // if(a%5==0 || a%11==0){
+        //     document.write("Divisible by 5 or 11");
+        // } else {
+        //     document.write("Not Divisible by 5 or 11");
+
+        // }
+        // let p = 20;
+        // let q = "20";
+        // document.write("<br>type of a is "+typeof(p)+"<br>");
+        // document.write("<br>type of b is "+typeof(q));
+
+        // if(a%2==0){
+        //     document.write("a is even");
+        // }else {
+        //     document.write("a is odd");
+        // }
+
+        // (condition)?true:false;
+        let a=33,b=30,c=230,d=340; //number
+        (a%4==0)?document.write("a is even"):document.write("a is odd");
+        // c = (a>b)?a:b;
+        document.write("Max is "+c);
+
+        if(a>b){
+            if(a>c){
+                document.write("a is maximum");
+            } else {
+                document.write("c is maximum");
+            }
+        } else {
+            if(b>c){
+                document.write("b is maximum");
+            } else {
+                document.write("c is maximum");
+            }
+        }
+
+       d = (a>b)?(a>c)?a:c:(b>c)?b:c;
+       document.write("Maximum is "+d)
+    </script>
+</body>
+</html>

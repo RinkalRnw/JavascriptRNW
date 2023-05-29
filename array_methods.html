@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = "hi@hello@how@are@you?";
+        // let b = a.split("@");
+        // document.write('a is-- '+a+"<br>");
+        
+        // document.write('array 2 elemnent is '+b[2]);
+        // b[0] = "Hi";
+        // b[1] = "hello";
+        // b[2] = "Helllooo";
+        // let c = b.toString();
+        // document.write('<br>Array to string conversion is '+c);
+        /**********************************************/
+        let str = ["Hello","Hi","Bye"];
+        str.push("zukega");
+        document.write('-----------Push function ------<br>');
+        
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+        str.pop();
+        document.write('<br>-----------Pop function ------<br>');
+
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+        str.shift();
+        document.write('<br>-----------Shift function ------<br>');
+
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+        str.unshift("test");
+        document.write('<br>-----------Unshift function ------<br>');
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+        
+    </script>
+</body>
+</html>

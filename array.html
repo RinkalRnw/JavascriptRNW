@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [10,22,31,11,50];
+        let sum =0;
+        //array index-position always start with 0
+        // document.write('array element is'+a[0]);
+        // document.write('\n array element is'+a[2]);
+        let max = a[0]; //10 22 31 50
+        for(let i=0;i<a.length;i++){
+            document.write('<br> element is '+a[i]);
+            sum += a[i];
+            if(a[i]>max){ //10>10 22>10 31>22 11>31 50>31
+                max = a[i];
+            }
+        }
+        document.write('<br>Sum of elements are '+sum);
+        document.write('<br>Max is '+max);
+        
+    </script>
+</body>
+</html>
