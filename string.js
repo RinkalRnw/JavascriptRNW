@@ -1,41 +1,56 @@
-let str = "Hi Hello How Are You?";
-document.write("Total length is "+str.length+"<br>");
+let str = "Lorem ipsum dolor sit amet consectetur adipisicing elit. At, repellat maiores itaque ";
+document.write("Length of string is "+str.length+"<br>");
+document.write("Uppercase string is "+str.toUpperCase()+"<br>");
+document.write("Lowercase of string is "+str.toLowerCase()+"<br>");
+let ch = str.slice(5,10);
 
-/*let str2 = str.slice(0); 
-let str3 = str.slice(3,8); 
-document.write("Starting point is "+str2+"<br>");
-document.write("Slice is "+str3); */
-let str2 = str.slice(-4).toUpperCase(); 
-let str3 = str.slice(-10,-6); 
-document.write("Starting point is "+str2+"<br>");
-document.write("Slice is "+str3.toLowerCase()+"<br>");
+document.write("slice function "+ch+"<br>");
 
-let str4 = str.substr(2,8);
-document.write("Sub str is "+str4+"<br>");
+let ch1 = str.slice(5);
+document.write("slice function "+ch1+"<br>");
 
-let p = "My name is soni Rinkal Soni";
-let q = p.replaceAll(/Soni/gi,"Sony");
-document.write("Replace is "+q+"<br>");
-let str5 = "Who is your faculty?";
+ch1 = str.slice(-5);
+document.write("slice reverse function "+ch1+"<br>");
 
-let str6 = "What are you doing";
+ch1 = str.slice(-10,-4);
+document.write("slice reverse function "+ch1+"<br>");
 
-let str7 = str.concat("sdklskldfsdgfhjk",str5);
-document.write("Merge is "+str7+"<br>");
+ch1 = str.substr(10,5);
+document.write("sub string function "+ch1+"<br>");
+
+let txt = "My Self Adesara  Rinkal Adesara";
+let rep_txt = txt.replaceAll(/adesara/gi,"Soni");
+document.write("Replace string "+rep_txt+"<br>");
+
+let text1 = "Rinkal";
+let text2 = "Adesara";
+let text3 = text2.concat("@", text1);
+document.write("Merge string function "+text3+"<br>");
+
+let finalText = "I am".concat(" ","Rinkal"," ","Adesara");
+document.write("Merge string function "+finalText+"<br>");
 
 
-let str8 = "                hello Students         ";
-document.write("String 8 is "+str8.length+"<br>");
-let str9 = str8.trim(); 
-document.write("String trim func is "+str9.length+"<br>");
+let t1 ="                  Hello             ";
+document.write("msg is "+t1.length+"<br>");
+let t2 = t1.trimEnd();
+document.write("msg is "+t2.length+"<br>");
 
-let s = "45";
-let s1 = s.padEnd(5,"$$5");
-document.write("String  is "+s1+"<br>");
+let t3 = "4";
+document.write("pad Start is "+t3.padEnd(2,"01"));
 
-// let s2 = str9.charAt(6).toLowerCase()+str9.slice(7);
-let s2 = str9.charCodeAt(0);
-document.write("String  is "+s2+"<br>");
+document.write("char at is "+text1.charAt(2));
+
+
+
+
+
+
+
+
+
+
+
 
 
 

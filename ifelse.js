@@ -1,97 +1,45 @@
-//If else if
-let m1,m2,m3;
-m1=78;
-m2=50;
-m3=67;
-let total = m1+m2+m3;
-console.log("TOtal is "+total);
-let per = total/3;
-document.write("Percentage is "+per+"<br>");
 /*
-80 up = A+
-70-80 = A
-60-70 = B+
-50-60 = B
-40-50 = Pass
-<40 = Fail 
+If statement
+if(condition){
+    //code
+}
 */
-if(per>=80){
-    document.getElementById('demo').innerHTML = "You achieved Grade A+";
-} else if(per>=70 & per<80){
-    document.getElementById('demo').innerHTML = "You achieved Grade A";
-} else if(per>=60 & per<70){
-    document.getElementById('demo').innerHTML = "You achieved Grade B+";
-}else if(per>=50 & per<60){
-    document.getElementById('demo').innerHTML = "You achieved Grade B";
-}else if(per>=40 & per<50){
-    document.getElementById('demo').innerHTML = "You achieved Pass Class";
-}else {
-    document.getElementById('demo').innerHTML = "Fail";
-}
+let age = prompt("Enter age:"); 
+let a = parseInt(age);
 
-//Wap to check no is +ve,-ve or zero.
-// let no =prompt("Enter any no:");
-let no = 5;
-if(no>0){
-    document.write("+ve no");
-} else if(no<0){
-    document.write("-ve no");
+if(a>=18){
+    document.getElementById("demo").innerHTML = "You are eligible 4 vote";
+}
+document.write("<br>Hello");
+/*
+If_Else  statement
+if(condition){
+    //true block
+}  else {
+    //false block
+}
+*/
+if(a>=18){
+    document.write("<br>You are eligible 4 vote");
 } else {
-    document.write("Zero");
+    document.write("<br>You are not eligible 4 vote");
 }
-//Find max from 3 value;
-let a=34,b=40,c=230;
-if(a>b){ //34>4
-    if(a>c){ //34>230
-        document.write("A is max - "+a);
-    }else {
-        document.write("C is max - "+c);
-    }
+//No is even or odd
+a = prompt("Enter no:");
+let b = parseInt(a);
+if(b%2 == 0){
+    document.write("<br>Even No");
 } else {
-    if(b>c){
-        document.write("B is max - "+b);
-    } else {
-        document.write("C is max - "+c);
-    }
+    document.write("<br>Odd No");
+
 }
-//Find max from 4 value.
-document.write("<pre>1.Add\n2.Sub\n3.Mult\n4.Div</pre>");
-let ch = prompt("Enter your choice");
-//Take 1,2,3,4 for add,sub
-//Take s for Sunday
-//Take + for add,- for subtraction 
-switch(ch){
-    case '+':
-        c=a+b;
-        document.write("\n Sunday");
-        break;
-    case '-':
-        c=a-b;
-        document.write("\n Subtraction is "+c);
-        break;    
-    case '3':
-        c=a*b;
-        document.write("\n Multiplication is "+c);
-        break;
-    case '4':
-        c=a/b;
-        document.write("\n Division is "+c);
-        break;
-    default:
-        document.write("\n Invalid choice");
-        break;
+//Leap Year or not
+if(b%4 == 0){
+    document.write("<br>Leap Year");
+} else {
+    document.write("<br> Not leap year");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+const pi=3.14;
+let r = 2.5;
+document.write("Area of circle is "+pi*r**2);
 

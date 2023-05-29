@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // let a=10;
+        // let b=20;
+        // document.write("a is ",a,"<br>");
+        // document.write("b is ",b,"<br>");
+        // document.write("add is "+(a+b)+"<br>");
+        // document.write("add is ",a+b,"<br>");
+
+        //Map Function
+        // let arr = [43,23,33,12,5];
+        // let arr2 = arr.map(myFun);
+        // function myFun(txt,val){
+        //     document.write("value is "+txt+"<br>"+"val is "+val);
+        // }
+            
+        /*Reduce & Reduceright
+        let arr3 = arr.reduceRight(myFunc2);
+        function myFunc2(t,v){
+            return t+v;
+        }
+        document.getElementById("demo").innerHTML = "Reduce func -- "+arr3;
+        */
+       //flatMap()
+    //    let a = [1,3,5,7];
+    //    let b = a.flatMap((a)=>a*2);
+    //     document.write("array is "+b);
+        //Filter Function 
+        let arr = [43,23,33,12,5];
+        let a = arr.filter(function(t){
+            return (t===24);
+        });
+        console.log(a);
+        if(arr.length === 0){
+            document.write("No element found");
+        } else {
+            document.write("Element found");
+        }
+
+    </script>
+</body>
+</html>

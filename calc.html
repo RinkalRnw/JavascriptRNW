@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <input type="text" name="no1" id="no1" readonly>
+        <br><br>
+        <input type="button" name="one" value="1" onclick="getVal(1)">
+        <input type="button" name="two" value="2" onclick="getVal(2)">
+        <input type="button" name="three" value="3" onclick="getVal(3)">
+        <br><br>
+        <input type="button" name="plus" value="+" onclick="getVal('+')">
+        <button type="button" name="minus" value="-" onclick="getVal('-')">-</button>
+        <input type="button" name="ans" value="=" onclick="getAns()">
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>

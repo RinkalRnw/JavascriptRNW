@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="alert('Loading...')" onresize="document.write('document resized');
+">
+<!-- onscroll="console.log('scroll event performed');"  -->
+    <input type="text" name="txt1" id="txt1" onmouseover="mouseHoverEvent()" onmouseleave="mouseLeaveEvent()">
+    <input type="button" value="Click" name="btn1" id="btn1" onclick="btnClick()">
+    <input type="button" value="DoubleClick" name="btn2" id="btn2" ondblclick="btnDblClick()">
+    <input type="button" value="RightClick" name="btn3" id="btn3" oncontextmenu="btnRightClick()">
+
+<input type="text" name="txt2" id="txt2" onkeyup="alert('hello')">
+
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, illum? Cupiditate accusantium explicabo ea quaerat alias, facere nisi possimus? Aliquid ad sapiente molestiae illum dolores, voluptatum esse consequuntur autem ea veniam ipsum a quae tempore assumenda sed. Perspiciatis numquam amet quaerat totam distinctio pariatur praesentium quo in quam illum excepturi nesciunt quasi possimus sunt eum, velit nulla reprehenderit vel adipisci repellat? Enim excepturi temporibus illum nulla maxime inventore aliquam eius dolor, ad quasi ipsam asperiores fugiat velit repellendus adipisci dignissimos saepe corporis accusantium expedita? Repellat dolores asperiores harum reiciendis alias ullam maiores? Dicta, illo rem nostrum saepe hic fugiat. Voluptates?</p>
+    <script>
+        function btnClick(){
+            document.getElementById("txt1").value="Hello";
+        }
+        function btnDblClick(){
+            document.getElementById("txt1").value="How Are you?";
+        }
+        function btnRightClick(){
+            document.getElementById("txt1").value="Right Click";
+        }
+        function mouseHoverEvent(){
+            document.getElementById("txt1").value="Mouse hover";
+        }
+        function mouseLeaveEvent(){
+            document.getElementById("txt1").value="Mouse Leave";
+        }
+
+
+    </script>
+</body>
+</html>

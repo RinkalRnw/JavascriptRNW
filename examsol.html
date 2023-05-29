@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "hello";
+        let str2 = "HeLLoR";
+        let s1,s2;
+        s1 = str.toUpperCase();
+        s2 = str2.toUpperCase();
+        if(s1 == s2){
+            document.write("Strings are same");
+        } else {
+            document.write("Strings are not same");
+        }
+        let newStr = str.charAt(0).toUpperCase();
+        newStr += str.slice(1);
+        document.write("<br> String is "+newStr);
+    </script>
+</body>
+</html>
