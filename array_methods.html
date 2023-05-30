@@ -13,7 +13,7 @@
         // document.write('a is-- '+a+"<br>");
         
         // document.write('array 2 elemnent is '+b[2]);
-        // b[0] = "Hi";
+                     // b[0] = "Hi";
         // b[1] = "hello";
         // b[2] = "Helllooo";
         // let c = b.toString();
@@ -43,7 +43,36 @@
         for(let i=0;i<str.length;i++){
             document.write('<br>'+str[i]);
         }
-        
+
+        str[2] = "Hello";
+        document.write('<br>-----------After update ------<br>');
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+
+        delete str[1];
+        document.write('<br>-----------After Delete ------<br>');
+        for(let i=0;i<str.length;i++){
+            document.write('<br>'+str[i]);
+        }
+
+        let str2 = ["pqr","xyz"];
+        let str4 = ["pqr","test2","test3"];
+        let str3 = str.concat("   @   ",str2,"$%$$$$",str4);
+        document.write('<br>-----------After Merge ------<br>');
+        for(let i=0;i<str3.length;i++){
+            document.write(str3[i]);
+        }
+        str4.splice(1,2,"newtesr");
+        document.write('<br>-----------After Splice ------<br>');
+        for(let i=0;i<str4.length;i++){
+            document.write("<br>"+str4[i]);
+        }
+        str4.splice(1,0,"sdfgd","teete");
+        document.write('<br>-----------After delete Splice ------<br>');
+        for(let i=0;i<str4.length;i++){
+            document.write("<br>"+str4[i]);
+        }
     </script>
 </body>
-</html>
+</html>     
