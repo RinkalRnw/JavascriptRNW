@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" name="btn1" id="btn1" onclick="disp()">Display</button>
+    <button type="button" name="btn2" id="btn2" onclick="customDisp()">Custom Display</button>
+    <script>
+        function disp(){
+            //Using event constructor 
+            const e1 = new Event('myFirstEvent');
+            document.addEventListener('myFirstEvent',()=>{
+                console.log("My first event called");
+                console.log(e1);
+            });
+            document.dispatchEvent(e1);
+        }
+        function customDisp(){
+            const e2 = new CustomEvent('userInfo',{
+                // detail :{
+                //     name:"Rinkal",
+                //     age:25
+                // }
+                detail:{
+                    name:"Rinkal",
+                    surname:"Soni",
+                    fullname:function(n1){
+                        this.name = n1;
+                        return this.name+"--"+this.surname;
+                    }    
+                }
+            });
+            document.addEventListener('userInfo',(data)=>{
+                // console.log("Your name is "+data.detail.name);
+                // document.write("Your name is "+data.detail.name);
+                document.write(`Your name is ${data.detail.name}`);
+                document.write(`<br>Your age is ${data.detail.age}`);
+                document.write(`<br>Your fullname is ${data.detail.fullname('test')}`);
+                
+            });
+
+            document.dispatchEvent(e2);
+
+        }
+
+    </script>
+</body>
+</html>
