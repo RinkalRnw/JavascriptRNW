@@ -74,6 +74,13 @@
                 document.getElementById('errCPwd').style.color = 'red';
                 return false;
             }
+            let capital = pwd.charAt(0);
+            if(capital>='a' && capital<='z'){
+                document.userform.pwd.focus();
+                document.getElementById('errPwd').innerHTML = "First character must be capital";
+                document.getElementById('errPwd').style.color = 'red';
+                return false;
+            }
         }
     </script>
 </body>
