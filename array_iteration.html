@@ -19,6 +19,26 @@
             txt += val+"<br>";
         });
         document.getElementById('demo').innerHTML = txt;
+
+        let c  = a.filter(function(i){
+            return i%2==0;
+        });
+        c.forEach(function(v){
+            document.write(v+"<br>");
+        });
+
+        let d = a.reduceRight(function(t,v){
+            
+                return t+v;
+            
+        });
+        document.write('<br>Total is'+d);
+        if(a.includes(5)){
+            document.write('Value found');
+        } else {
+            document.write('No Value found');
+
+        }
     </script>
 </body>
 </html>
