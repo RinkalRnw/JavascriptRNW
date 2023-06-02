@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCRIPT>
+        //String array example
+        let a = ["pqr","xyz","abc","test"];
+        // a.sort(); //ascending order
+        // a.reverse(); //descending order
+        // for(let i=0;i<a.length;i++){
+        //     document.write(" <br> "+a[i]);
+        // }
+
+
+        let b = [100,25,4,36,78,81,15,8];
+        // b.sort(function(a,b){
+        //     return b-a;
+        // });
+        b.forEach(myArray);
+
+        function myArray(val,i){
+            document.write(i+'  array is '+val+"<br>");           
+        }
+        b.forEach(function(p,q){
+            document.write(q+'  array is '+p+"<br>");           
+        });
+        // for(let i=0;i<b.length;i++){
+        //     document.write(" <br>"+b[i]);
+        // }
+        // let c = a.indexOf("xyz");
+        // document.write('78 index is '+c);
+        
+    </SCRIPT>
+</body>
+</html>
