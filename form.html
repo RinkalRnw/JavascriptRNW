@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="userform" onsubmit="return validateForm()">
+        <label for="">Name:</label>
+        <input type="text" name="uname" id="uname" ><br><br>
+        <p id="errName" name="errName"></p><br>
+        <label for="">Number</label>
+        <input type="number" name="no" id="no">
+        <p id="errNo" name="errNo"></p><br>
+        <label for="">Password</label>
+        <input type="password" name="pwd" id="pwd">
+        <p id="errPwd" name="errPwd"></p><br>
+
+        <label for="">Confirm Password</label>
+        <input type="password" name="cpwd" id="cpwd">
+        <p id="errCPwd" name="errCPwd"></p><br>
+
+        <input type="submit" value="Register" name="btn1">
+    </form>
+    <script>
+        function validateForm(){
+            // let name = document.forms['userform']['uname'].value;
+            let name = document.userform.uname.value;
+            let no = document.userform.no.value;
+            let pwd = document.userform.pwd.value;
+            let cpwd = document.userform.cpwd.value;
+            if(name == ''){
+                document.userform.uname.focus();
+                document.getElementById('errName').innerHTML = "Please enter username";
+                document.getElementById('errName').style.color = 'red';
+                return false;
+            } 
+            if(name.length<2){
+                document.userform.uname.focus();
+                document.getElementById('errName').innerHTML = "Name must be >2 characters";
+                document.getElementById('errName').style.color = 'red';
+                return false;
+            }
+            if(no == ''){
+                document.userform.no.focus();
+                document.getElementById('errNo').innerHTML = "Please enter number";
+                document.getElementById('errNo').style.color = 'red';
+                return false;
+            }
+            if(no<1 || no>100){
+                document.userform.no.focus();
+                document.getElementById('errNo').innerHTML = "Number must be between 1-100";
+                document.getElementById('errNo').style.color = 'red';
+                return false;
+            }
+            if(pwd == ''){
+                document.userform.pwd.focus();
+                document.getElementById('errPwd').innerHTML = "Please enter Password";
+                document.getElementById('errPwd').style.color = 'red';
+                return false;
+            }
+            if(cpwd == ''){
+                document.userform.cpwd.focus();
+                document.getElementById('errCPwd').innerHTML = "Please enter Confirm Password";
+                document.getElementById('errCPwd').style.color = 'red';
+                return false;
+            }
+            
+            if(pwd != cpwd){
+                document.userform.cpwd.focus();
+                document.getElementById('errCPwd').innerHTML = "Please enter same password";
+                document.getElementById('errCPwd').style.color = 'red';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
