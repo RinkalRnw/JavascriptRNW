@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <script>
+        function IsValidRegisteration(){
+            var uname = document.studentform.uname.value;
+            var upwd = document.studentform.upwd.value;         
+            var urpwd = document.studentform.urpwd.value;
+            var uemail = document.studentform.uemail.value; 
+            var umobile = document.studentform.umobile.value; 
+            var phoneno = /^\+?[1-9][0-9]{7,14}$/;
+            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+            if (uname.length <= 3) {
+                document.getElementById('uerr').innerHTML = "Username must greater than 2 characters !";
+                return false;
+            }
+            if (upwd != urpwd) {
+                document.getElementById('urpwderr').innerHTML = "Password does not matched !";
+                return false;
+            }
+            let result = pattern.test(uemail);
+            if (result!=true) {
+                document.getElementById('uemailerr').innerHTML = "Please enter valid email address !";
+                return  false;
+            }
+            var mobileno = phoneno.test(umobile);
+            if(mobileno!=true)
+            {
+                document.getElementById('umobileerr').innerHTML = "Mobile number must contain less than 10 digit !";
+                return  false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form  class="register-form" onsubmit="return(IsValidRegisteration())" name="studentform">
+                <input type="text" class="f1" placeholder="name" name="uname" id="uname" required />
+                <p id="uerr" class="error"></p>
+
+                <input type="password" class="f1" placeholder="password" name="upwd" required/>
+                <input type="password" class="f1" placeholder="Confirm password" name="urpwd"  required/>
+                <p id="urpwderr" class="error"></p>
+
+                <input type="text" class="f1" placeholder="email address" name="uemail"  required/>
+                <p id="uemailerr" class="error"></p>
+
+                <input type="text" class="f1" placeholder="mobile number" name="umobile"  required/>
+                <p id="umobileerr" class="error"></p>
+
+                <input type="submit" name="btn1" value="create" class="btn1">
+                <p class="message">Already registered? <a href="">Sign In</a></p>
+            </form>
+            <!-- <form class="login-form" onsubmit="IsValidLogin()">
+                <input type="text" class="f1" placeholder="username" required />
+                <input type="password" class="f1" placeholder="password" required />
+                <input type="submit" name="btn1" value="login" class="btn1">
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form> -->
+        </div>
+    </div>
+
+            <!-- jquery Bootstrap -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        });
+    </script>
+</body>
+</html>
