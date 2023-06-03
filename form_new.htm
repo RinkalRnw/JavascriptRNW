@@ -38,6 +38,7 @@
             let pwd = document.userform.pwd.value;
             let cpwd = document.userform.cpwd.value;
             let email = document.userform.email.value;
+            alert(email);
             if(name == ''){
                 document.userform.uname.focus();
                 document.getElementById('errName').innerHTML = "Please enter username";
@@ -88,16 +89,26 @@
                 document.getElementById('errPwd').style.color = 'red';
                 return false;
             }
-            var pattern = "/^[A-Za-z0-9]@+[a-z].+[a-z]$/";
+            // var pattern = "/^[A-Za-z0-9]@+[a-z].+[a-z]$/";
+            // var pattern = "/^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(\.[a-zA-Z]+)*$/;";
+            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
             var ans = pattern.test(email);
+            var datePattern = /^[0-9]{2}*-[0-9]{2}*-[0-9]{4}+$/; //dd-mm-yyyy
             // var a = new RegExp();
-            alert(ans);
+          
+            // if(!email.match(pattern)){
+            //     document.userform.email.focus();
+            //     document.getElementById('errEmail').innerHTML = "Plz enter valid email";
+            //     document.getElementById('errEmail').style.color = 'red';
+            //     return false;
+            // }
             if(ans == false){
                 document.userform.email.focus();
                 document.getElementById('errEmail').innerHTML = "Plz enter valid email";
                 document.getElementById('errEmail').style.color = 'red';
                 return false;
             }
+
 
         }
     </script>
