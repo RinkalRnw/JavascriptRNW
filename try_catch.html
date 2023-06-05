@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function emp(){
+            this.fname = "Rinkal";
+            this.lname = "Soni";
+        }        
+        emp.prototype.fullname = function(){
+            return this.fname+" "+this.lname;
+        }
+        const e1 = new emp();
+        console.log("Your fullname is "+e1.fullname());
+        function Student() {
+            this.name = 'John';
+            this.gender = 'M';
+        }
+
+        Student.prototype.sayHi = function(){
+            return this.name.toUpperCase()
+        };
+
+        var studObj = new Student();
+
+        console.log(studObj.sayHi());
+        // console.log(studObj.name);
+        let a=10;
+        try{
+            if(a!=10){
+                let obj = {
+                    msg:"error generate"
+                };
+                throw obj;
+            } else {
+                let obj = {
+                    msg:"error solved"
+                };
+                throw obj;
+            }
+        } catch(e){ 
+            //message is property of e object 
+            //for error msg 
+            console.log(e);
+            document.write(e.msg+"<br>");
+            
+        } finally{
+            document.write('default finally block');            
+        }
+        
+    </script>
+</body>
+</html>
