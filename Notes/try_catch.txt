@@ -1,0 +1,17 @@
+
+try catch throw & finally 
+it is same as c++
+
+
+try{
+//error generate 
+//create karavani error 
+
+} catch (){
+	//error catch by catch block
+	//e error ne catch kare
+} 
+finally{
+	this block will always executed
+	//if error generate or not
+}
