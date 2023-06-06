@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let b = 20;
+        // javascript scope
+        /*
+        1.function/local
+        2.global
+        3.block
+        */
+
+        if(b==20){
+           let c = 11;
+        //    document.write('c is '+c);
+           
+        } else {
+            let c = 35;
+        //    document.write('c is '+c);
+
+        }
+
+        // document.write('c is '+c);
+
+        function abc(){
+            let a=10;
+            document.write("a is "+a);          
+            document.write("b is "+b);  
+            for(let i =0;i<5;i++){
+                document.write("a is "+a);          
+
+            }        
+        }
+        abc();
+        // document.write("b is "+b);          
+         
+    //    document.write('a is '+a);
+
+    </script>
+</body>
+</html>

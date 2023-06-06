@@ -28,6 +28,11 @@
         <input type="password" name="cpwd" id="cpwd">
         <p id="errCPwd" name="errCPwd"></p><br>
 
+        <label for="">Gender</label>
+        <input type="radio" name="g1" id="ml" value="male">Male
+        <input type="radio" name="g1" id="fl" value="female">Female
+        <p id="errG1" name="errG1"></p><br>
+
         <input type="submit" value="Register" name="btn1">
     </form>
     <script>
@@ -38,7 +43,7 @@
             let pwd = document.userform.pwd.value;
             let cpwd = document.userform.cpwd.value;
             let email = document.userform.email.value;
-            alert(email);
+            let g1 = document.userform.g1.value;
             if(name == ''){
                 document.userform.uname.focus();
                 document.getElementById('errName').innerHTML = "Please enter username";
@@ -93,7 +98,7 @@
             // var pattern = "/^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(\.[a-zA-Z]+)*$/;";
             var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
             var ans = pattern.test(email);
-            var datePattern = /^[0-9]{2}*-[0-9]{2}*-[0-9]{4}+$/; //dd-mm-yyyy
+            // var datePattern = /^[0-9]{2}*-[0-9]{2}*-[0-9]{4}+$/; //dd-mm-yyyy
             // var a = new RegExp();
           
             // if(!email.match(pattern)){
@@ -108,8 +113,17 @@
                 document.getElementById('errEmail').style.color = 'red';
                 return false;
             }
-
-
+            // if(g1 == ''){
+            //     document.getElementById('errG1').innerHTML = "Please select gender";
+            //     document.getElementById('errG1').style.color = 'red';
+            //     return false;
+            // } 
+            var ans = document.querySelectorAll('input[name="g1"]:checked');
+            if(ans.length == 0){
+                document.getElementById('errG1').innerHTML = "Please select gender";
+                document.getElementById('errG1').style.color = 'red';
+                return false;
+            }
         }
     </script>
 </body>
