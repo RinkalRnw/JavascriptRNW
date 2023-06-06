@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="objects.js"></script>
+    <!-- <script src="objects.js"></script> -->
+<script>
+    let emp = {
+        fname:"Rinkal",
+        lname:"Soni",
+        salary:25000,
+        fullname:function(){
+            return this.fname+" "+this.lname;
+        },
+        get getSalary(){
+            return this.salary;
+            
+        },
+        set setLastname(newval){
+            this.lname = newval;
+        }
+        
+    };
+    document.write('<br>Lastname is '+emp.lname);
+
+    document.write('<br>Salary is '+emp.getSalary);
+    emp.setLastname = "Adesara";
+    document.write('<br>Lastname is '+emp.lname);
+
+</script>
 </body>
 </html>
