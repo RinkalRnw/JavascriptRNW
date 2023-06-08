@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onload="alert('window loading')">
-    <p id="demo"  onunload="alert('unloading......')">Hello</p>
+<body>
+    <p id="demo">Hello</p>
     <input type="text" name="uname" id="uname">
+
     <button name="btn1" id="btn1" onclick="add()" onmouseover="document.getElementById('btn1').style.color = 'green'
     " onmouseout="document.getElementById('btn1').style.color = 'red'
     ">Click</button>
     <button name="btn2" id="btn2" ondblclick="document.write('sfdgh sdhgd dfgfd')">Dbl Click</button>
     <button name="btn3" id="btn3" oncontextmenu="alert('right click pressed..')">Right Click</button>
+    <button name="btn4" id="btn4" onclick="window.print()">Print</button>
+    <button name="btn5" id="btn5" onclick="window.location.href = 'https://www.rnwmultimedia.edu.in/'">Home page</button>
     
 
     <!-- <button name="btn2" id="btn2" ondblclick="alert('hiiii')">Dbl Click</button> -->
     <script>
         
         function add(){
-            document.getElementById('uname').value = "Rinkal";
+            let a = document.getElementById('uname').value;
+            let b = eval(a);
+            document.getElementById('uname').value = "Adition"+b;
             document.getElementById('demo').style.color = "red";
             document.getElementById('demo').innerText = "How are you?";            
         }

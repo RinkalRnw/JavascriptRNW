@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="no1" id="no1">
+    <button name="btn1" value="1" id="btn1" onclick="getVal('1')">1</button>
+    <button name="btn2" value="2" id="btn2" onclick="getVal('2')">2</button>
+    <button name="btn3" value="+" id="btn3" onclick="getVal('+')">+</button>
+    <button name="btn4" value="=" id="btn4" onclick="getAns()">=</button>
+    <button name="btn5" value="-" id="btn5" onclick="getVal('-')">-</button>
+    <button name="btn6" value="clr" id="btn6" onclick="getClear()">Clear</button>
+    <button name="btn7" value="bk" id="btn7" onclick="getBack()">del</button>
+    <script>
+        txt = '';
+        function getVal(digit){
+            txt = txt+digit;
+            document.getElementById('no1').value = txt;            
+        }
+        function getAns(){
+            let ans = eval(txt);
+            document.getElementById('no1').value = ans;
+        }
+        function getClear(){
+            txt = '';
+            document.getElementById('no1').value = txt;
+        }
+        function getBack(){
+            txt = txt.slice(0,-1);
+            document.getElementById('no1').value = txt;
+        }
+    </script>
+</body>
+</html>

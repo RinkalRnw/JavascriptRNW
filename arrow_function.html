@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let emp = {
+        //     fname:"Rinkal",
+        //     lname:"Soni",
+        //     fullname : function() {
+        //         return this.fname;
+        //     }
+        // };
+        // document.write('Your fullname is '+emp.fullname());
+        class emp{
+            fname ="test";
+            lname = "sdhjf";
+            fullname = () => this.fname+" "+this.lname;            
+        }
+        let e1 = new emp();
+        document.write('Your fullname is '+e1.fullname());
+        
+        // e1.disp();
+    </script>
+</body>
+</html>
