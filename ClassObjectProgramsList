@@ -1,0 +1,22 @@
+Class Object Program list
+
+1) create object of user & includes members as follow
+property -- username,surname,age,salary
+qualification includes 10th,12th,bca,mca using array
+method - display() to print all information about user.
+
+
+2)Count no of keys in object [using forin loop] 
+3)How many ways to access object property in JS.
+4)Create student object & print details.
+-->name,age,marks
+-->create function to find average of marks
+-->Print function to display student all details.
+
+5)Allow only alphabets when keyboard key press
+6)Create a function with default argument  with assign default value.
+7)Create an object from function 
+-->vehicle function.
+-->property - type,tire
+-->print all details
+create object like car,bus,truck

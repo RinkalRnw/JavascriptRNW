@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" name="btn1" onClick="document.dispatchEvent(e1);">Click</button>
+    <script>
+    // const e1 = new CustomEvent('msgDisp',{
+    //     detail:"hello"
+    // });
+    const e1 = new CustomEvent('msgDisp',{
+        detail:{
+            name:"Rinkal",
+            age:25
+        }
+    });
+    document.addEventListener('msgDisp',function(data){
+        // console.log("detail is "+data.detail);
+        console.log("Name is "+data.detail.name);
+        console.log("Age is "+data.detail.age);
+    });
+
+
+        // const e1 = new Event('msgDisp');
+
+        // document.addEventListener('msgDisp',function(){
+        //     console.log("Message Display....");
+        //     let a = 10,b=20;
+        //     let c=a+b;
+        //     console.log("Addition is "+c);
+        // });
+        
+    </script>
+</body>
+</html>
