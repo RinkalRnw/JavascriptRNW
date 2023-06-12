@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis doloremque ut minima maiores labore et aliquam similique odio, dolorum possimus deleniti, dolor at quos eligendi rem? Explicabo, optio excepturi.</p>
+    <p id="txt1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis doloremque ut minima maiores labore et aliquam similique odio, dolorum possimus deleniti, dolor at quos eligendi rem? Explicabo, optio excepturi.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis doloremque ut minima maiores labore et aliquam similique odio, dolorum possimus deleniti, dolor at quos eligendi rem? Explicabo, optio excepturi.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis doloremque ut minima maiores labore et aliquam similique odio, dolorum possimus deleniti, dolor at quos eligendi rem? Explicabo, optio excepturi.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis doloremque ut minima maiores labore et aliquam similique odio, dolorum possimus deleniti, dolor at quos eligendi rem? Explicabo, optio excepturi.</p>
@@ -19,10 +19,12 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusamus, iure veritatis molestias perferendis asperiores maxime dolores! Molestiae corrupti rem maiores officia assumenda blanditiis? Voluptatibus id libero officia commodi eaque.</p>
     </div>
     <img src="" id="uimg" alt="no image found..">
+
+    <button type="button" name="btn1" id="btn1">Click</button>
     <script>
         let q = document.querySelectorAll("input[name='']:checked");
         let a = document.getElementsByTagName("p");
-        console.log(a);
+        // console.log(a);
         for(let i=0;i<a.length;i++){
             if((i+1)%2==0){
                 a[i].style.color="blue";
@@ -30,7 +32,23 @@
         }
         let b = document.getElementsByClassName('box');
         document.getElementById("uimg").src = "instagram.png";
+        document.getElementById('txt1').innerHTML = "<table border='1'><tr><td>cgjjk</td></tr><tr><td>cgjjkcc</td></tr></table>";
 
+        // document.getElementById('btn1').onclick = function(){
+        //     alert("Hii");
+        // }
+        // document.getElementById('btn1').ondblclick = function(){
+        //     console.log("Double click pressed...");
+        // }
+
+        // function abc(){
+        //     console.log("Double click pressed...");
+        // }
+
+        document.getElementById("btn1").addEventListener("click",dispMsg);
+        function dispMsg(){
+            alert("Event called...");
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class emp{
+        //     a=10;
+        //     b=20;
+        // }
+        // let e1 = new emp();
+        // document.write('a is '+e1.a);
+        // document.write('b is '+e1.b);
+        // document.write('Addition is '+(e1.a+e1.b));
+        //Constructor - special member function - automatically called when object is created
+        class student{
+            constructor(grid,name,course){
+                this.gr = grid;
+                this.nm = name;
+                this.cr = course;
+            }
+            display11(){
+                document.write('Your GRID is -- '+this.gr+"<br>");
+                document.write('Your Name is -- '+this.nm+"<br>");
+                document.write('Your Course is -- '+this.cr+"<br>");
+            }
+            
+        }
+        student.prototype.display = function(){
+            
+                 document.write('Your GRID is -- '+this.gr+"<br>");
+                document.write('Your Name is -- '+this.nm+"<br>");
+                document.write('Your Course is -- '+this.cr+"<br>");
+           
+        }
+        let no = prompt("Enter GRID:");
+        let name = prompt("Enter name:");
+        let course = prompt("Enter course:");
+        // let sObj = new student(101,"Rinkal","Fullstack");
+        let sObj = new student(no,name,course);
+        sObj.display();
+    </script>
+</body>
+</html>
