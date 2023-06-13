@@ -16,7 +16,7 @@
         // document.write('b is '+e1.b);
         // document.write('Addition is '+(e1.a+e1.b));
         //Constructor - special member function - automatically called when object is created
-        class student{
+        let std = class {
             constructor(grid,name,course){
                 this.gr = grid;
                 this.nm = name;
@@ -26,14 +26,12 @@
                 document.write('Your GRID is -- '+this.gr+"<br>");
                 document.write('Your Name is -- '+this.nm+"<br>");
                 document.write('Your Course is -- '+this.cr+"<br>");
-            }
-            
+            }            
         }
-        student.prototype.display = function(){
-            
-                 document.write('Your GRID is -- '+this.gr+"<br>");
-                document.write('Your Name is -- '+this.nm+"<br>");
-                document.write('Your Course is -- '+this.cr+"<br>");
+        student.prototype.display = function(){            
+            document.write('Your GRID is -- '+this.gr+"<br>");
+            document.write('Your Name is -- '+this.nm+"<br>");
+            document.write('Your Course is -- '+this.cr+"<br>");
            
         }
         let no = prompt("Enter GRID:");
