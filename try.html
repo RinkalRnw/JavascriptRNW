@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10;//global 
+        function abc(){
+           let b = 25;
+        }
+        function xyz(){
+            let ab = 25;
+            function(){
+                ab
+            }
+        }
+       
+        /*
+        JS Scope - 
+        1)Local/function - private
+        2)Block - limited access 
+        3)Global - public 
+
+        */
+        // error - system generated
+        //exception - user generated
+
+
+        try{
+           let age = 10;
+           if(age <18){
+                throw age;
+           } 
+        } catch(e){
+            document.write("error msg --- You age is "+e);
+            //solution
+        }
+        finally{
+            document.write('always code executed...');
+            
+        }
+    </script>
+</body>
+</html>

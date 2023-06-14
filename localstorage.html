@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button type="button" id="btn1">Delete</button>
+    <script>
+        let user = ["Rinkal",25];
+       
+        let str = JSON.stringify(user);
+        localStorage.setItem("userDetail",str);
+      
+        let strarray = JSON.parse(localStorage.getItem('userDetail'));
+
+        document.getElementById("demo").innerHTML = "name is "+strarray[0]+" Age is "+strarray[1];
+
+        // let name = "Rinkal";
+        // localStorage.setItem("username1",name);
+        // localStorage.setItem("username","Rinkal Soni");
+        // document.getElementById("demo").innerHTML = localStorage.getItem('username');
+        
+        // document.getElementById("btn1").addEventListener("click",function(){
+        //     // localStorage.removeItem('username1');
+        //     localStorage.clear();
+        // });
+
+    </script>
+    <!-- JSON - javascript object notation -->
+</body>
+</html>

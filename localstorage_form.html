@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg"></p>
+    <form action="#" name="myfrm">
+        <label for="">Username:</label>
+        <input type="text" name="uname" id="uname"><br><br>
+
+        <label for="">Age:</label>
+        <input type="text" name="age" id="age"><br><br>
+        <input type="button" value="Save" name="btn1" onclick="insertData()">
+
+    </form>
+    <br><br>
+    <table border="1" id="userData">
+
+    </table>
+    <script>
+        function insertData(){
+            var name = document.myfrm.uname.value;
+            var age = document.myfrm.age.value;
+
+            let user = [name,age];
+            // localStorage.setItem("username",name);
+            // localStorage.setItem("age",age);
+            dispData();
+        }
+        function dispData(){
+            let name = localStorage.getItem("username");
+            document.getElementById("userData").innerHTML = "<tr><th>Name</th><th>Action</th></tr><tr><td>"+name+"</td><td><button type='button' id='btnDel' name='btnDel' onclick='delData()'>Delete</button></td></tr>";
+            document.myfrm.uname.value = '';
+        }
+        function delData(){
+            localStorage.removeItem('username');
+            document.getElementById("userData").innerHTML = '';
+            document.getElementById("msg").innerHTML = "User successfully deleted...";
+        }
+        /*
+        user = [
+            {
+                id:1,
+                name:vishal,
+                
+            },
+            {
+                id:2,
+                name:azim
+            }
+        ]
+        user = ["vishal","2534"];
+        user1 = ["Azim","sjdgf"]
+       
+        */
+    </script>
+</body>
+</html>
