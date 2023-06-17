@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" name="btn1" id="btn1" >Click</button>
+    <button type="button" name="btn2" id="btn2" ondblclick="alert('Hii.....')">Double Click</button>
+    <button type="button" name="btn3" id="btn3">Click</button>
+
+
+<script>
+    document.getElementById('btn1').onclick = ()=>{
+        document.write('hello');
+    }
+    document.getElementById("btn3").addEventListener("dblclick",function(){
+        this.style.color = "red";
+        this.innerHTML = "Button Clicked";
+    });
+</script>
+</body>
+</html>

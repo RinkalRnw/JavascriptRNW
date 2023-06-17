@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = [
+        {
+            name: 'JavaScript',
+            year: 1995,
+        },
+        {
+            name: 'Python',
+            year: 1991,
+        },
+        {
+            name: 'Golang',
+            year: 2009,
+        },
+        {
+            name: 'PHP',
+            year: 1995,
+        },
+        {
+            name: 'Rust',
+            year: 2010,
+        },
+        ];
+        let userObj = ['',
+        JSON.stringify(user)];
+        localStorage.setItem('userData',userObj);
+
+        let data = localStorage.getItem('userData');
+        document.write(JSON.parse(data));
+        
+    </script>
+</body>
+</html>

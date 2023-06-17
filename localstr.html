@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // JSON - javascript object notation
+        var userData = [
+            {
+                name:"Rinkal",
+                age:25,
+                salary:25000,
+                course:"MCA"
+            },
+            {
+                name:"Rinkal",
+                age:25,
+                salary:25000,
+                course:"MCA"
+            }
+        ];
+        localStorage.setItem("userInfo",JSON.stringify(userData));
+        var data = localStorage.getItem("userInfo");
+        let txt = JSON.parse(data);
+        document.getElementById("demo").innerHTML = "Name is "+txt.name +"<br>Age is "+txt.age;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"><span>Hjdf</span><p id="p1">Quasi,<b> ratione</b> eligendi itaque aut nostrum sed repellat velit!</p><p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat archite </p></div>
+    <div id="box">
+        <p>Lorem ipsum.</p><span>Hi How are you?</span>
+    </div>
+    <script>
+        let a = document.getElementById("main").parentNode;
+        // console.log(a);
+        let b = document.getElementById("main").firstChild;
+       let c = b.childNodes;
+    //   console.log(c); 
+        for(let i=0;i<c.length;i++){
+                document.write("text is "+c[i].innerText);
+        }
+
+        let sib = document.getElementById("p1").previousSibling;
+        console.log(sib); 
+    </script>
+</body>
+</html>

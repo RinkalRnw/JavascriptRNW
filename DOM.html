@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae, eaque optio aut eveniet vero architecto nam quaerat temporibus incidunt eius reprehenderit porro accusantium velit quas quisquam maiores obcaecati sit!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae, eaque optio aut eveniet vero architecto nam quaerat temporibus incidunt eius reprehenderit porro accusantium velit quas quisquam maiores obcaecati sit!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae, eaque optio aut eveniet vero architecto nam quaerat temporibus incidunt eius reprehenderit porro accusantium velit quas quisquam maiores obcaecati sit!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae, eaque optio aut eveniet vero architecto nam quaerat temporibus incidunt eius reprehenderit porro accusantium velit quas quisquam maiores obcaecati sit!</p>
+    </div>
+
+    <img id="userimg" src="" alt="No image found...">
+    <script>
+        let a = document.getElementsByTagName("p");
+        for(let i=0;i<a.length;i++){
+            if((i+1)%2 == 0){
+                a[i].style.color="blue";
+            }
+        }
+        document.getElementById('userimg').src = "instagram.png";
+    </script>
+</body>
+</html>
