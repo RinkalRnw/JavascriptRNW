@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="frm" id="frm">
+        <input type="hidden" name="uid" id="uid">
+        <label for="">Name:</label>
+        <input type="text" name="uname" id="uname"><br><br>
+        
+        <label for="">Age:</label>
+        <input type="text" name="age" id="age"><br><br>
+
+        <label for="">Salary:</label>
+        <input type="text" name="salary" id="salary"><br><br>
+
+        <label for="">Gender:</label>
+        <input type="radio" name="gender" id="gender" value="male">Male
+        <input type="radio" name="gender" id="gender" value="female">Female
+        
+        <br><br>
+        <label for="">Qualification:</label>
+        <input type="checkbox" name="q1" id="q1" value="10th">10th
+        <input type="checkbox" name="q1" id="q2" value="12th">12th
+        <input type="checkbox" name="q1" id="q3" value="bca">BCA
+        <input type="checkbox" name="q1" id="q4" value="mca">MCA
+        <input type="checkbox" name="q1" id="q5" value="phD">PHD
+        
+        <br><br>
+        <input type="button" value="Save" name="btn1" id="btn1" >
+
+    </form><br><br>
+    <table id="userData" border="2" cellpadding="10"></table>
+<script>
+    display();
+    document.getElementById("btn1").addEventListener("click",function(){
+        let name = document.frm.uname.value;
+        let age = document.frm.age.value;
+        let sal = document.frm.salary.value;
+        let id = document.frm.uid.value;
+        let gender = document.frm.gender.value;
+        let q1 = document.getElementsByName('q1');
+        let qual = [];
+        for(let j=0;j<q1.length;j++){
+            if(q1[j].checked == true){
+                qual.push(q1[j].value);
+            }
+        }
+       let userDetail = {};
+        let data = {
+            name:name,
+            age:age,
+            salary:sal,
+            gender:gender,
+            qualification:qual
+            
+        };
+
+        let info = JSON.parse(localStorage.getItem("UserInfo"));
+        if(info != null){
+            if(id!=''){
+                for(let i=0;i<info.studentInfo.length;i++){
+                    if(id == i){
+                        info.studentInfo[i].name = name;
+                        info.studentInfo[i].age = age;
+                        info.studentInfo[i].salary = sal;
+                        info.studentInfo[i].gender = gender;
+                        info.studentInfo[i].qualification = qual;
+                        
+                    }
+                }
+                localStorage.setItem("UserInfo",JSON.stringify(info));
+                //update
+            } else {
+                //push
+                info.studentInfo.push(data);
+                localStorage.setItem("UserInfo",JSON.stringify(info));
+            }
+
+            
+        } else {
+            userDetail.studentInfo = [data];
+            localStorage.setItem("UserInfo",JSON.stringify(userDetail));
+        }
+        
+        document.frm.reset();
+        document.frm.uid.value='';
+        display();
+    });
+
+    function display(){
+
+        let dt = "<tr>";
+            dt += "<td>Name</td>";
+            dt += "<td>Age</td>";
+            dt += "<td>Salary</td>";
+            dt += "<td>Gender</td>";
+            dt += "<td>Qualification</td>";
+            dt += "<td>Action</td>";
+            dt+= "</tr>";
+        let info = localStorage.getItem("UserInfo");
+        if(info != null){
+            let data = JSON.parse(info);
+            for(let i=0;i<data.studentInfo.length;i++){
+                dt += "<tr>";
+                dt += "<td>"+data.studentInfo[i].name+"</td>";
+                dt += "<td>"+data.studentInfo[i].age+"</td>";
+                dt += "<td>"+data.studentInfo[i].salary+"</td>";
+                dt += "<td>"+data.studentInfo[i].gender+"</td>";
+                dt += "<td>"+data.studentInfo[i].qualification+"</td>";
+                dt += "<td><input type='button' name='edit' id='edit' onclick='editData("+i+")' value='Edit'>";
+                dt += " <input type='button' name='del' id='del' onclick='delData("+i+")' value='Delete'></td>";
+                dt += "</tr>";
+
+            }
+            document.getElementById("userData").innerHTML = dt;
+
+        }
+        
+    }
+    function delData(id){
+        let info = localStorage.getItem("UserInfo");
+        if(info != null){
+            let data = JSON.parse(info);
+            console.log(data);
+            data.studentInfo.splice(id,1);
+            localStorage.setItem("UserInfo",JSON.stringify(data));
+            display();
+        }
+    }
+    function editData(id){
+        let info = localStorage.getItem("UserInfo");
+        if(info != null){
+            let data = JSON.parse(info);
+            for(let i=0;i<data.studentInfo.length;i++){
+                if(id == i){
+                    document.frm.uname.value = data.studentInfo[i].name;
+                    document.frm.age.value = data.studentInfo[i].age;
+                    document.frm.salary.value = data.studentInfo[i].salary;
+                    document.frm.gender.value = data.studentInfo[i].gender;
+                    //Seelcted data
+                    let qData = data.studentInfo[i].qualification;
+                    //all data
+                    let q1 = document.getElementsByName('q1');
+                    
+                    for(let j=0;j<q1.length;j++){
+                        if(qData.includes(q1[j].value)){
+                            q1[j].checked = true;
+                        }
+                    }
+                    document.frm.uid.value = i;
+                }
+            }           
+        }
+    }
+</script>
+</body>
+</html>

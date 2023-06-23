@@ -37,41 +37,7 @@ document.getElementById("dispData").innerHTML = "<tr><th>Name</th><th>Age</th><t
         a+="<td>"+getData.userDetail[i].name+"</td>";
         a+="<td>"+getData.userDetail[i].age+"</td>";
         a +="<td>"+getData.userDetail[i].course+"</td>";
-        a += "<td><input type='button' name='btnEdit' id='btnEdit' value='Edit'><input type='button' name='btnDel' id='btnDel' onclick='delData(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        )' value='Delete'></td></tr>";
+        a += "<td><input type='button' name='btnEdit' id='btnEdit' value='Edit'><input type='button' name='btnDel' id='btnDel' onclick='delData()' value='Delete'></td></tr>";
         document.getElementById("dispData").innerHTML += a;
         
     }
