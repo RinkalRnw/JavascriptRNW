@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hello 
+    <div id="demo"></div>
+    <button name="btn1" id="btn1">Click</button>
+    <script>
+        document.getElementById('btn1').addEventListener("click",()=>{
+            let req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(this.status == 200){
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            req.open("GET","demo.txt",true);
+            req.send();
+            console.log(req);
+        });
+       
+    </script>
+</body>
+</html>

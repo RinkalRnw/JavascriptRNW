@@ -7,52 +7,58 @@ document.getElementById("btn1").addEventListener("click",()=>{
     let cr = document.frm.course.value;
     let userid = document.frm.uid.value;
     let gender = document.frm.g1.value;
-    // let qual = document.frm.q1;
-    let qual = document.getElementsByName("q1");
-    let q1 = [];
-    for(let j=0;j<qual.length;j++){
-        if(qual[j].checked == true){
-            q1.push(qual[j].value);
-        }
-    }
-    let data = {};
-    let info = {
-        name:name,
-        age:age,
-        salary:sal,
-        course:cr,
-        gender:gender,
-        qualification:q1
-    };
-    let studData = JSON.parse(localStorage.getItem("StudentDetail"));
-    if(studData != null){
-        if(userid != ''){
-            //update
-            for(let i=0;i<studData.studentInfo.length;i++){
-                if(userid == i){
-                    studData.studentInfo[i].name = name;
-                    studData.studentInfo[i].age = age;
-                    studData.studentInfo[i].salary = sal;
-                    studData.studentInfo[i].course = cr;
-                    studData.studentInfo[i].gender = gender;
-                    studData.studentInfo[i].qualification = q1;
+    
+    if(name != '' && age != '' && sal!= '' && cr!='' && userid !='' && gender!=''){
+            // let qual = document.frm.q1;
+            let qual = document.getElementsByName("q1");
+            let q1 = [];
+            for(let j=0;j<qual.length;j++){
+                if(qual[j].checked == true){
+                    q1.push(qual[j].value);
                 }
             }
-            
+            let data = {};
+            let info = {
+                name:name,
+                age:age,
+                salary:sal,
+                course:cr,
+                gender:gender,
+                qualification:q1
+            };
+            let studData = JSON.parse(localStorage.getItem("StudentDetail"));
+            if(studData != null){
+                if(userid != ''){
+                    //update
+                    for(let i=0;i<studData.studentInfo.length;i++){
+                        if(userid == i){
+                            studData.studentInfo[i].name = name;
+                            studData.studentInfo[i].age = age;
+                            studData.studentInfo[i].salary = sal;
+                            studData.studentInfo[i].course = cr;
+                            studData.studentInfo[i].gender = gender;
+                            studData.studentInfo[i].qualification = q1;
+                        }
+                    }
+                    
 
-        } else {
-            //push
-            studData.studentInfo.push(info);            
-            
-        }
-        localStorage.setItem("StudentDetail",JSON.stringify(studData));
+                } else {
+                    //push
+                    studData.studentInfo.push(info);            
+                    
+                }
+                localStorage.setItem("StudentDetail",JSON.stringify(studData));
+            } else {
+                data.studentInfo = [info];
+                localStorage.setItem("StudentDetail",JSON.stringify(data));
+            }
+            document.frm.reset();
+            document.frm.uid.value = '';
+            display();
     } else {
-        data.studentInfo = [info];
-        localStorage.setItem("StudentDetail",JSON.stringify(data));
+        return false;
     }
-    document.frm.reset();
-    document.frm.uid.value = '';
-    display();
+   
 });
 
 

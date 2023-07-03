@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <form action="" name="catfrm" enctype="multipart/form-data">
+        <label for="">Image</label>
+        <input type="file" name="catimg" id="catimg" onchange="addImageData(this)">
+        <br><br>
+        
+        <label for="">Category</label>
+        <input type="text" name="cat" id="cat">
+        <br><br>
+        <input type="button" value="Save Category" name="btn1" id="btn1">
+    </form>
+<br><br>
+    <img src="" id="dispImage" alt="" height="300px" width="300px">
+    <script>
+        document.getElementById("btn1").addEventListener("click",()=>{
+            var cat = document.catfrm.cat.value;
+            
+            let data = {};
+            let catdata = localStorage.getItem("cat_data");
+            let dt = JSON.parse(catdata);
+            if(dt != null){
+                dt.Category.push(cat);
+                data = dt;
+            } else {
+                data.Category = [cat];
+
+                }
+            
+            localStorage.setItem("cat_data",JSON.stringify(data));
+        });
+
+        //Image uplpoad
+        function addImageData(event){
+            let imgData = event.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(imgData);            
+
+            reader.addEventListener('load', () => {
+                localStorage.setItem('catImage', reader.result);
+                document.getElementById('dispImage').src =  reader.result;
+        });
+        }
+
+    </script>
+</body>
+</html>

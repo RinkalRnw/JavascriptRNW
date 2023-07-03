@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="num" id="num">
+    <input type="button" name="btn2" id="btn2" value="1" onclick="addData('1')">
+    <input type="button" name="btn3" id="btn3" value="2" onclick="addData('2')">
+    <input type="button" name="btn4" id="btn4" value="+" onclick="addData('+')">
+    <input type="button" name="btn5" id="btn5" value="=">
+    <input type="button" name="btn6" id="btn6" value="Clear">
+    <input type="button" name="btn7" id="btn7" value="Delete">
+    
+    <script>
+        let data = '';
+        function addData(txt){
+            data +=txt;
+            document.getElementById('num').value = data;
+        }
+        document.getElementById("btn5").addEventListener("click",function(){
+            let no = document.getElementById('num').value;
+            document.getElementById('num').value = eval(no);
+        });
+
+        document.getElementById("btn6").addEventListener("click",function(){
+            document.getElementById('num').value = '';
+            data = '';
+        });
+        document.getElementById("btn7").addEventListener("click",function(){
+            let no = document.getElementById('num').value;
+            data = no.slice(0,-1);
+            document.getElementById('num').value = data;
+        });
+            
+        
+
+        // let a,b;
+        // class emp{
+        //     constructor(a,b){
+        //         this.a = a;
+        //         this.b = b;
+        //     }
+        //     // disp(){
+        //     //     document.write('Multiplication is '+(this.a*this.b));
+                
+        //     // }
+        // }
+        // emp.prototype.disp = function(){
+        //     document.write('Multiplication is '+(this.a*this.b));
+        // }
+        // let e1 = new emp(10,20);
+        // e1.disp();
+    </script>
+</body>
+</html>

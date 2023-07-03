@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">HEllo</div>
+    <div id="demo1"></div>
+
+    <button id="btn1" name="btn1">Click</button>
+    <script>
+        document.getElementById("btn1").addEventListener("click",()=>{
+            let obj = new XMLHttpRequest();
+
+            obj.onreadystatechange = function(){
+                if(this.status == 200){
+                    document.getElementById("demo1").innerHTML = this.responseText;
+                }
+            }
+            obj.open("GET","jstext122.txt",true);
+            obj.send();
+            console.log(obj);
+        });
+       
+
+    </script>
+</body>
+</html>

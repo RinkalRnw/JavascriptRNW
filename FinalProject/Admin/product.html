@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Product Form</h3>
+    <form action="#" name="prodfrm" enctype="multipart/form-data">
+        <label for="">Category</label>
+        <select name="catid" id="catid">
+            <option value="">--Select Category--</option>
+        </select><br><br>
+        <label>Name:</label>
+        <input type="text" name="pname" id="pname"><br><br>
+        <label>Price:</label>
+        <input type="text" name="price" id="price"><br><br>
+        <label>Image:</label>
+        <input type="file" name="pimg[]" id="pimg" multiple><br><br>
+        <input type="button" value="Save Product" name="btn2" id="btn2">
+    </form><br><br>
+    <img src="" alt="" name="prod_img" id="prod_img" height="300px" width="300px">
+
+    <script src="product.js"></script>
+
+</body>
+</html>
