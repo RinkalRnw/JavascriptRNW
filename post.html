@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/posts";
+        let newdata = {
+            "userId": 161,
+            "id": 101,
+            "title": "Rinkal",
+            "body": "Rinkal Test" 
+        };
+        let data = JSON.stringify(url);
+        let a =  new XMLHttpRequest();
+        a.open("POST",url,true);
+        a.send(data);
+        a.onload = function(){
+            if(a.status == 201){
+                console.log("Data Added successfully");
+            }
+        }
+    </script>
+</body>
+</html>

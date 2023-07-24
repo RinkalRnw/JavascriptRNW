@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://jsonplaceholder.typicode.com/todos");
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        const body = JSON.stringify({
+        userId: 1,
+        title: "Fix my bugs - testing",
+        completed: false
+        });
+        xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 201) {
+            console.log(JSON.parse(xhr.responseText));
+        } else {
+            console.log(`Error: ${xhr.status}`);
+        }
+        };
+        xhr.send(body);
+    </script>
+</body>
+</html>

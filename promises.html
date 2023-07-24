@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    
+    
+    let pr2 = new Promise((rs,rj)=>{
+        setTimeout(()=>{
+            rs("Promise called...")
+        },6000)
+    });
+    async function disp(){
+        console.log("Hello");
+        let res = await pr2;
+        console.log(res);        
+    }
+    disp();
+    console.log("Hello12");
+   
+    let obj = new XMLHttpRequest();
+    obj.open("POST","abc.txt",true);
+    let a={
+        name:"Rinkal",
+        id:101
+    };
+    obj.setRequestHeader("content-type","application/json");
+    obj.onload = function(){
+
+    }
+    obj.send();
+   </script> 
+  
+</body>
+</html>
